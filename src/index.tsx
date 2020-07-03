@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Routes from './config/routes';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+import 'antd/dist/antd.css';
+import 'ant-design-pro/dist/ant-design-pro.css';
+
+ReactDOM.render(<Routes />,
   document.getElementById('root')
 );
 
