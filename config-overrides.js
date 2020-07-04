@@ -15,6 +15,7 @@ module.exports = override(
     '@components': path.join(__dirname, 'src/shared/components'),
     '@icons': path.join(__dirname, 'src/shared/icons'),
     '@layout': path.join(__dirname, 'src/layout'),
+    '@services': path.join(__dirname, 'src/services'),
     '@utils': path.join(__dirname, 'src/utils')
   }),
   fixBabelImports('import', {

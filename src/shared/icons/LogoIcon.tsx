@@ -5,7 +5,7 @@ interface Props {
   style?: CSSProperties;
 };
   
-const LogoIcon = ({ style, size = 120 }: Props) => (
+const LogoIcon = ({ size = 120, style }: Props) => (
   <div style={style}>
     <svg 
       xmlns="http://www.w3.org/2000/svg"

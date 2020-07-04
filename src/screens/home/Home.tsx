@@ -1,55 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'antd/lib';
-import ListItem from '@components/data_entry/ListItem';
+
 import './Home.less';
+import { User } from 'src/schema/User';
+
+import { userService, authenticationService } from '@services/index';
 
 type Props = {};
 
 const Home: React.FC<Props> = () => {
-  const [fetching, setFetching] = useState(true);
+  const [currentUser, setCurrentUser] = useState();
+  const [users, setUsers] = useState();
 
-  const list = [
-      {id: 1, name: 'list1'},
-      {id: 2, name: 'list2'},
-      {id: 3, name: 'list3'},
-      {id: 4, name: 'list4'}
-  ]
+  useEffect(()=>{
+    setCurrentUser(authenticationService.currentUserValue);
+    setUsers(undefined);
 
-  useEffect(() => {
-    (async () => {
-      setFetching(true);
+    console.log(authenticationService.currentUserValue)
 
-      try {
-        await list;
-      } catch (error) {
-        // console.log(error)
-      }
-
-      setFetching(false);
-    })();
-  }, [list]);
-
+  },[users])
   return (
-    <>
-      {/* <Header /> */}
       <div className="home">
         <Card
           className="home__card"
           title="HomeCard"
-          extra={
-            <a className="home__link" href="/#" target="_blank" rel="noopener noreferrer">
-              {/* <LogoIcon fill="#3f51b5" /> {t('githubLink')} */}
-            </a>
-          }
         >
-          {fetching ? (
-            <p>loading</p>
-          ) : (
-            list.map((item: IItem) => <ListItem key={item.id} item={item.name} />)
-          )}
+          <div>
+              {/* <h1>Hi {currentUser.name}!</h1> */}
+              <p>You're logged in with React & JWT!!</p>
+              <h3>Users from secure api end point:</h3>
+              {users &&
+                  <ul>
+                      {/* {users.map((user: User) => <li key={user.id}>{user.name} {user.email}</li>)}  */}
+                  </ul>
+              }
+          </div>
         </Card>
       </div>
-    </>
   );
 };
 
