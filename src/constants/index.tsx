@@ -3,5 +3,5 @@ export const ApiUrls = {
     logout: () => `logout`,
     users: (userId?: number) => `users/${userId}`,
     products: (productId?: number) => `products/${productId}`
-  }, buildApiUrl = (apiUrl: string) => `http://localhost:5000/${apiUrl}`;
+  }, buildApiUrl = (apiUrl: string) => `https://fathomless-lowlands-82210.herokuapp.com/${apiUrl}`;
   

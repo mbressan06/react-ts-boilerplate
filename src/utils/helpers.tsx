@@ -1,6 +1,6 @@
 import { createBrowserHistory } from 'history';
-import { authenticationService } from '../services/auth.service';
-import { User } from 'src/schema/User';
+import { authenticationService } from '@services/index';
+import { User } from '@schema/index';
 
 export const sum = (a: number, b: number): number => a + b;
 

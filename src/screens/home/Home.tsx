@@ -3,7 +3,6 @@ import { Card } from 'antd/lib';
 import { history } from '@utils/index';
 import './Home.less';
 
-
 type Props = {};
 
 const Home: React.FC<Props> = () => {

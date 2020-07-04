@@ -8,6 +8,7 @@
       "@icons/*": ["src/shared/icons/*"],
       "@layout/*": ["src/layout/*"],
       "@services/*": ["src/services/*"],
+      "@schema/*": ["src/schema/*"],
       "@utils/*": ["src/utils/*"]
     }
   }
