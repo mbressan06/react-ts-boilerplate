@@ -1,4 +1,5 @@
-import { authHeader, handleResponse } from '../utils';
+import { authHeader, handleResponse } from '@utils/index';
+import { ApiUrls } from '@constants/index';
 
 export const userService = {
     getAll
@@ -6,5 +7,5 @@ export const userService = {
 
 function getAll() {
     const requestOptions = { method: 'GET', headers: authHeader() };
-    return fetch(`/users`, requestOptions).then(handleResponse);
+    return fetch(ApiUrls.users(), requestOptions).then(handleResponse);
 }

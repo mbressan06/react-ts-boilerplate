@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader, Button } from 'antd/lib';
+import { PageHeader } from 'antd/lib';
 import LogoIcon from '@icons/LogoIcon';
+import { authenticationService } from '@services/index';
+import { history } from '@utils/index';
 
 import './styles.less';
+
+const logout = () => {
+  authenticationService.logout();
+  history.push('/login');
+}
 
 const Header = () => {
   return (
@@ -20,7 +27,8 @@ const Header = () => {
         marginBottom: '10px'
       }}
       extra={[
-        <Button key="1" href="/login">Login</Button>
+        <Link to="/login">Login</Link>,
+        <Link to="/" onClick={logout}>Logout</Link>
       ]}
     />
 )};
