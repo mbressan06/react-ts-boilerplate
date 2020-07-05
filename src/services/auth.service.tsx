@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 import { handleResponse } from '@utils/helpers';
-import { ApiUrls } from '@constants/index';
+import { ApiUrls, buildApiUrl } from '@constants/index';
 import { User } from '../schema/User';
 
 const userJson = localStorage.getItem('currentUser');
@@ -30,22 +30,28 @@ function login(user: string, pwd: string) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user, pwd })
     };
+    console.log(ApiUrls.login());
+    
 
-    return fetch(ApiUrls.login(), requestOptions)
+    return fetch(buildApiUrl(ApiUrls.login()), requestOptions)
         .then(handleResponse)
-        .then(user => {
+        .then(currentUser => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            currentUserSubject.next(user);
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            currentUserSubject.next(currentUser);
 
-            return user;
+            return currentUser;
         });
 }
 
 function logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+    };
     currentUserSubject.next(null);
+    localStorage.removeItem('currentUser');
+    return fetch(buildApiUrl(ApiUrls.logout()), requestOptions)
 }
 
 function isLoggedIn(): boolean {
