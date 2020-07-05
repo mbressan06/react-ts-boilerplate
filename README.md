@@ -1,4 +1,4 @@
-# React TypeScript Adopets
+# React TypeScript Ant Design Boilerplate
 
 ## Features
 
@@ -23,7 +23,13 @@
 
 ## Getting Start
 
-Run the following commands in your terminal
+Run the following commands in your terminal for development run
+
+    npm start
+
+For build run the command
+
+    npm run build
 
 <!-- TODO: Steps -->
 

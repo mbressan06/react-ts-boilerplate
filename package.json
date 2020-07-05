@@ -1,11 +1,12 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "author": "Marcelo Bressan",
+  "license": "UNLICENSED",
   "private": true,
   "engines": {
     "node": "12.9.1"
  },
- "proxy": "https://fathomless-lowlands-82210.herokuapp.com",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "npm-run-all -p prettier-watch stylelint-watch start-js",

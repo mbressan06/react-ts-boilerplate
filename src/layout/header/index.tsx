@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from 'antd/lib';
-import LogoIcon from '@icons/LogoIcon';
 import { authenticationService } from '@services/index';
 import { history } from '@utils/index';
+import LogoIcon from '@icons/LogoIcon';
 
 import './styles.less';
 
@@ -21,9 +21,7 @@ const Header = () => {
         </Link> 
       }
       style={{ 
-        display: 'inline-grid', 
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        backgroundColor: '#e62e6b',
+        display: 'flex', 
         marginBottom: '10px'
       }}
       extra={[

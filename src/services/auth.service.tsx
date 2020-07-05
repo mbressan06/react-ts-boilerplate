@@ -1,7 +1,7 @@
 import { BehaviorSubject } from 'rxjs';
-import { handleResponse } from '@utils/helpers';
 import { ApiUrls, buildApiUrl } from '@constants/index';
-import { User } from '../schema/User';
+import { handleResponse } from '@utils/helpers';
+import { User } from '@schema/index';
 
 const userJson = localStorage.getItem('currentUser');
 
