@@ -1,4 +1,4 @@
-const baseUrl =  'https://fathomless-lowlands-82210.herokuapp.com';
+const baseUrl =  process.env.BASE_URL;
 export const ApiUrls = {
     login: () => `login`,
     logout: () => `logout`,
