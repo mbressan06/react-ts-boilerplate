@@ -1,7 +1,8 @@
+const baseUrl =  process.env.BASE_URL || 'http://localhost:5000';
 export const ApiUrls = {
     login: () => `login`,
     logout: () => `logout`,
     users: (userId?: number) => `users/${userId}`,
     products: (productId?: number) => `products/${productId}`
-  }, buildApiUrl = (apiUrl: string) => `https://fathomless-lowlands-82210.herokuapp.com/${apiUrl}`;
+  }, buildApiUrl = (apiUrl: string) => `${baseUrl}/${apiUrl}`;
   
