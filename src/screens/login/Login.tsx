@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { history } from '@utils/index';
 import { authenticationService } from '@services/index';
+import { Card } from 'antd/lib';
 
 const  LoginPage = () => {
   var location: { from: { pathname: string }};
@@ -13,10 +14,10 @@ const  LoginPage = () => {
   })
 
   return (
-      <div>
+      <Card>
           <div className="alert alert-info">
-              Username: test<br />
-              Password: test
+              Username: luiz<br />
+              Password: 123
           </div>
           <h2>Login</h2>
           <Formik
@@ -66,7 +67,7 @@ const  LoginPage = () => {
                   </Form>
               )}
           />
-      </div>
+      </Card>
   )
 }
 
