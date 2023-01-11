@@ -40,7 +40,7 @@
     "formik": "^2.1.4",
     "history": "^4.9.0",
     "i18next": "^15.0.6",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "rc-field-form": "^1.7.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
